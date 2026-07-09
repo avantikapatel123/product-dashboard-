@@ -1,3 +1,211 @@
+:root {
+  --page: #f5f0e8;
+  --surface: #fffaf2;
+  --surface-strong: #f0eadf;
+  --ink: #24313f;
+  --muted: #687382;
+  --line: #dfd3c1;
+  --teal: #16756f;
+  --teal-soft: #e4f4ef;
+  --coral: #d95f45;
+  --coral-dark: #b94a34;
+  --amber: #f2b84b;
+  --shadow: 0 22px 48px rgba(55, 45, 32, 0.14);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(22, 117, 111, 0.14), transparent 34%),
+    linear-gradient(135deg, #f8efe1 0%, #edf6f1 52%, #f7f1e9 100%);
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+#root > div {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 52px !important;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  flex-wrap: wrap;
+  gap: 18px;
+  border: 1px solid rgba(223, 211, 193, 0.9);
+  border-radius: 18px;
+  background: rgba(255, 250, 242, 0.88) !important;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+header > div {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+input,
+select {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 14px;
+  color: var(--ink);
+  background: #ffffff;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+input {
+  width: min(270px, 100%);
+}
+
+select {
+  min-width: 180px;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(242, 184, 75, 0.3);
+}
+
+button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 12px;
+  padding: 0 17px;
+  color: #fffaf2;
+  background: var(--coral);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--coral-dark);
+  box-shadow: 0 12px 26px rgba(217, 95, 69, 0.28);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+header button:first-of-type {
+  color: var(--teal);
+  background: var(--teal-soft);
+}
+
+header button:first-of-type:hover:not(:disabled) {
+  color: #ffffff;
+  background: var(--teal);
+  box-shadow: 0 12px 26px rgba(22, 117, 111, 0.22);
+}
+
+header + h1 {
+  margin: 30px 0 26px;
+  color: var(--ink);
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: 1.05;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+header + h1 + div {
+  align-items: stretch;
+}
+
+header + h1 + div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 254px !important;
+  min-height: 370px;
+  margin: 0 !important;
+  padding: 16px !important;
+  border: 1px solid rgba(223, 211, 193, 0.95) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 250, 242, 0.96);
+  box-shadow: 0 18px 36px rgba(55, 45, 32, 0.12);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+header + h1 + div > div:hover {
+  border-color: rgba(22, 117, 111, 0.42) !important;
+  box-shadow: 0 24px 48px rgba(55, 45, 32, 0.18);
+  transform: translateY(-5px);
+}
+
+header + h1 + div img {
+  width: 100%;
+  height: 172px;
+  object-fit: contain;
+  border-radius: 14px;
+  background:
+    linear-gradient(145deg, rgba(22, 117, 111, 0.1), rgba(242, 184, 75, 0.12)),
+    #fffdf8;
+}
+
+header + h1 + div h3 {
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+header + h1 + div p {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: auto 0 0;
+  border-radius: 999px;
+  padding: 6px 11px;
+  color: var(--teal);
+  background: var(--teal-soft);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+header + h1 + div > div button {
+  width: 100%;
+  margin-top: 4px;
+}
+
 .loading-wrap {
   min-height: 100vh;
   display: flex;
@@ -7,11 +215,17 @@
   gap: 16px;
 }
 
+.loading-wrap h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 28px;
+}
+
 .spinner {
   width: 48px;
   height: 48px;
-  border: 5px solid #dddddd;
-  border-top-color: #2563eb;
+  border: 5px solid rgba(22, 117, 111, 0.16);
+  border-top-color: var(--coral);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -22,17 +236,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+  background: rgba(36, 49, 63, 0.5);
   z-index: 10;
+  backdrop-filter: blur(7px);
 }
 
 .checkout-modal,
 .modal-fallback {
-  width: min(420px, calc(100% - 32px));
+  width: min(430px, calc(100% - 32px));
   padding: 24px;
-  border-radius: 10px;
-  background: white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(223, 211, 193, 0.95);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 30px 80px rgba(36, 49, 63, 0.28);
+}
+
+.checkout-modal h2 {
+  margin: 0;
+  color: var(--ink);
+}
+
+.checkout-modal p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 18px;
 }
 
 .modal-header,
@@ -44,11 +272,55 @@
 }
 
 .modal-actions {
-  margin-top: 20px;
+  margin-top: 22px;
+}
+
+.modal-header button,
+.modal-actions button:first-child {
+  color: var(--ink);
+  background: var(--surface-strong);
+}
+
+.modal-header button {
+  min-width: 42px;
+  padding: 0 12px;
+}
+
+.modal-header button:hover:not(:disabled),
+.modal-actions button:first-child:hover:not(:disabled) {
+  color: var(--teal);
+  background: var(--teal-soft);
+  box-shadow: none;
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 760px) {
+  #root > div {
+    width: min(100% - 20px, 1200px);
+    padding-top: 16px !important;
+  }
+
+  header,
+  header > div,
+  .modal-actions {
+    align-items: stretch !important;
+    flex-direction: column;
+  }
+
+  header > div,
+  input,
+  select,
+  button {
+    width: 100%;
+  }
+
+  header + h1 + div > div {
+    width: 100% !important;
+    max-width: 360px;
   }
 }
